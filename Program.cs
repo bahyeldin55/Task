@@ -4,40 +4,34 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Task1
+namespace Task2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Enter start number:");
-            int startNun = int.Parse(Console.ReadLine());
+            Console.WriteLine("enter the two number");
+            int n1 = int.Parse(Console.ReadLine());
+            int n2 = int.Parse(Console.ReadLine());
 
+            Console.WriteLine("perfect numbers are :");
 
-            Console.WriteLine("Enter end number:");
-
-
-            int endNum = int.Parse(Console.ReadLine());
-            Console.WriteLine("These are the numbers between {0} and {1}", startNun, endNum);
-            for (int i = startNun; i <= endNum; i++)
+            for (int i = n1; i <= n2; i++)
             {
-                int counter = 0;
-                for (int j = 2; j <= i / 2; j++)
+                int n = i;
+                int sum = 0, factor = 1;
+                while (factor < n)
                 {
-                    if (i % j == 0)
+                    if ((n % factor) == 0)
                     {
-                        counter++;
-
-
-
-
-                        break;
+                        sum = sum + factor;
                     }
-
+                    factor++;
                 }
-                if (counter == 0 && i != 1)
+
+                if (sum == i)
                 {
-                    Console.WriteLine(" {0} ", i);
+                    Console.WriteLine(i + " ");
                 }
                 Console.ReadKey();
             }
